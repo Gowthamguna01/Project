@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form records</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css1/bootstrap.min.css' %}">
+    <script src="{% static 'bootstrap.min.js' %}"></script>
+</head>
+<body>
+    <form action="/update/{{boys.id}}"  method="POST"  autocomplete="off" class="a">
+
+    
+        {% csrf_token %}
+
+        <h3 style="text-align: center;">Update Records</h3>
+
+        <label>StudentId</label>
+        <input type="number" name="sid" value="{{boys.sid}}"><br><br>
+
+        <label>StudentName</label>
+        <input type="text" name="sname" value="{{boys.sname}}"><br><br>
+
+        <label>Tamil</label>
+        <input type="number" name="stamil" value="{{boys.stamil}}"><br><br>
+
+        <label>English</label>
+        <input type="number" name="senglish" value="{{boys.senglish}}"><br><br>
+
+        <label>Maths</label>
+        <input type="number" name="smaths" value="{{boys.smaths}}"><br><br>
+
+        <label>Science</label>
+        <input type="number" name="sscience" value="{{boys.sscience}}"><br><br>
+
+        <label>Social</label>
+        <input type="number" name="ssocial" value="{{boys.ssocial}}"><br><br>
+
+        <center><button type="submit" class="btn btn-success">OK</button></center>
+
+    </form>
+    
+</body>
+</html>

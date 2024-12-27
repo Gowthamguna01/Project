@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form records</title>
+    
+    <link rel="stylesheet" href="{% static 'css1/bootstrap.min.css' %}">
+    <script src="{% static 'bootstrap.min.js' %}"></script>
+    <style>
+        table,th,tr,td{
+            border: 3px solid blue;
+            border-collapse: collapse;
+            height: auto;
+            width: 150px;
+            margin-left: 150px;
+            padding: 20px;
+            background-color: rgb(244, 244, 213);
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <h2 style="background-color: burlywood;text-align: center;">STUDENT MARKLIST</h2>
+        <thead>
+            <tr>
+                <th>Main Id</th>
+                <th>StudentId</th>
+                <th>StudentName</th>
+                <th>Tamil</th>
+                <th>English</th>
+                <th>Maths</th>
+                <th>Science</th>
+                <th>Social</th>
+                <th>Total</th>
+                <th>Average</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for boys in academy %}
+            <tr>
+                <td>{{boys.id}}</td>
+                <td>{{boys.sid}}</td>
+                <td>{{boys.sname}}</td>
+                <td>{{boys.stamil}}</td>
+                <td>{{boys.senglish}}</td>
+                <td>{{boys.smaths}}</td>
+                <td>{{boys.sscience}}</td>
+                <td>{{boys.ssocial}}</td>
+                <td>{{boys.total}}</td>
+                <td>{{boys.average}}</td>
+                
+                <td>
+                    <a href="/edit/{{boys.id}}">Edit</a>
+                    <a href="/delete/{{boys.id}}">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br><br>
+    <center><a href="/std" class="btn btn-success">Add New Records</a></center>
+  
+</body>
+</html>
